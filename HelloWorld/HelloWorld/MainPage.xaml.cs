@@ -40,7 +40,6 @@ namespace HelloWorld
             //System.Diagnostics.Debug.WriteLine("Hola1111111111111111111111111111111111");
 
             base.OnAppearing();
-            
         }
        async void OnAdd(object sender, System.EventArgs e)
         {
@@ -54,6 +53,12 @@ namespace HelloWorld
         async void OnUpdate(object sender, System.EventArgs e)
         {
 
+                var scanner = new ZXing.Mobile.MobileBarcodeScanner();
+                var result = await scanner.Scan();
+
+            if (result != null)
+             await   DisplayAlert(result.Text, "Resultado", "Ok");  
+           
             /*var post = _posts[0];
             post.Title += " UPDATED";
 

@@ -3,7 +3,7 @@
   <StackLayout>
     <StackLayout Orientation="Horizontal">
       <Button Text="Add" Clicked="OnAdd" />
-      <Button Text="Update" Clicked="OnUpdate" HorizontalOptions="CenterAndExpand" />
+      <Button Text="Update" Clicked="OnUpdate" HorizontalOptions="CenterAndExpand" x:Name="Scan"/>
       <Button Text="Delete" Clicked="OnDelete" />
     </StackLayout>
     <ListView x:Name="postListView">
