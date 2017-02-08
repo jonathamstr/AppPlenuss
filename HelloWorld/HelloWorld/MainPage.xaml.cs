@@ -20,7 +20,6 @@ namespace HelloWorld
 
         private const string Url = "http://192.168.1.68:8000/tables";
         private HttpClient _client = new HttpClient();
-        private ObservableCollection<Post> _posts;
         private ObservableCollection<string> _tablas;
         public MainPage()
 		{
@@ -45,30 +44,30 @@ namespace HelloWorld
         }
        async void OnAdd(object sender, System.EventArgs e)
         {
-            var post = new Post { Title = "Title" + DateTime.Now.Ticks };
+/*            var post = new Post { Title = "Title" + DateTime.Now.Ticks };
 
             var content = JsonConvert.SerializeObject(post);
             await _client.PostAsync(Url, new StringContent(content));
-            _posts.Insert(0, post);
+            _posts.Insert(0, post);*/
         }
 
         async void OnUpdate(object sender, System.EventArgs e)
         {
 
-            var post = _posts[0];
+            /*var post = _posts[0];
             post.Title += " UPDATED";
 
             var content = JsonConvert.SerializeObject(post);
-            await _client.PutAsync(Url + "/" + post.Id, new StringContent(content));
+            await _client.PutAsync(Url + "/" + post.Id, new StringContent(content));*/
         }
 
         async void OnDelete(object sender, System.EventArgs e)
         {
-            var post = _posts[0];
+/*            var post = _posts[0];
 
             _posts.Remove(post);
             await _client.DeleteAsync(Url + "/" + post.Id);
-
+            */
 
         }
 
