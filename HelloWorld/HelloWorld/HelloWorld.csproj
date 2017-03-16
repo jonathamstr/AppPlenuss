@@ -35,9 +35,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Activity.cs" />
+    <Compile Include="ActivityDetail.xaml.cs">
+      <DependentUpon>ActivityDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityPage.xaml.cs">
+      <DependentUpon>ActivityPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityService.cs" />
     <Compile Include="App.cs" />
+    <Compile Include="ContactConfig.xaml.cs">
+      <DependentUpon>ContactConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContactsPage.xaml.cs">
+      <DependentUpon>ContactsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CrossPage.xaml.cs">
       <DependentUpon>CrossPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleProducto.xaml.cs">
+      <DependentUpon>DetalleProducto.xaml</DependentUpon>
     </Compile>
     <Compile Include="DialPage.xaml.cs">
       <DependentUpon>DialPage.xaml</DependentUpon>
@@ -45,6 +62,10 @@
     <Compile Include="GreetPage.xaml.cs">
       <DependentUpon>GreetPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Instagram.xaml.cs">
+      <DependentUpon>Instagram.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IPAddressManager.cs" />
     <Compile Include="ISQLiteDb.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -67,6 +88,8 @@
     <Compile Include="TestList.xaml.cs">
       <DependentUpon>TestList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
+    <Compile Include="UserService.cs" />
     <Compile Include="welcome.xaml.cs">
       <DependentUpon>welcome.xaml</DependentUpon>
     </Compile>
@@ -75,6 +98,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="ImageCircle.Forms.Plugin.Abstractions, Version=1.8.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xam.Plugins.Forms.ImageCircle.1.8.1\lib\portable-net45+wp80+win8+wpa81\ImageCircle.Forms.Plugin.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Android">
       <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v7.0\Mono.Android.dll</HintPath>
     </Reference>
@@ -207,6 +233,42 @@
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DetalleProducto.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Instagram.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ActivityPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ActivityDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ContactsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ContactConfig.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

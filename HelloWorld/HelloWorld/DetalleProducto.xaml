@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelloWorld.DetalleProducto">
+  <StackLayout>
+    <Label Text="{Binding id}" TextColor="Gray" FontSize="20" HorizontalOptions="Center"/>
+    <Label Text="{Binding producto}" TextColor="Blue"/>
+    <Label Text="{Binding desc1}"/>
+  </StackLayout>
+</ContentPage>

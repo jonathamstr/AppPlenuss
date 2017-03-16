@@ -14,9 +14,10 @@ namespace HelloWorld
         public App()
         {
             // The root page of your application
-            var content = new QoutesPage();
+            var content = new MainPage();
 
-            MainPage = new MainPage();
+            MainPage = content;
+
         }
 
         protected override void OnStart()
@@ -33,6 +34,7 @@ namespace HelloWorld
         {
             // Handle when your app resumes
         }
+        
 
         public string Title
         {

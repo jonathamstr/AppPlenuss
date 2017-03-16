@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using ZXing.Mobile;
+using ImageCircle.Forms.Plugin.Droid;
 
 namespace HelloWorld.Droid
 {
@@ -22,6 +23,8 @@ namespace HelloWorld.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             MobileBarcodeScanner.Initialize(Application);
+            //platform specific init
+            ImageCircleRenderer.Init();
             LoadApplication(new App());
         }
     }

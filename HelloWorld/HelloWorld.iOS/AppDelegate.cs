@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using ImageCircle.Forms.Plugin.iOS;
 
 namespace HelloWorld.iOS
 {
@@ -23,7 +24,8 @@ namespace HelloWorld.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+            LoadApplication(new App());//platform specific init
+            ImageCircleRenderer.Init();
 
             return base.FinishedLaunching(app, options);
         }
