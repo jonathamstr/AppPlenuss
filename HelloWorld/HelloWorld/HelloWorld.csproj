@@ -44,8 +44,13 @@
     </Compile>
     <Compile Include="ActivityService.cs" />
     <Compile Include="App.cs" />
+    <Compile Include="BaseViewModel.cs" />
+    <Compile Include="Contact.cs" />
     <Compile Include="ContactConfig.xaml.cs">
       <DependentUpon>ContactConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContactDetail.xaml.cs">
+      <DependentUpon>ContactDetail.xaml</DependentUpon>
     </Compile>
     <Compile Include="ContactsPage.xaml.cs">
       <DependentUpon>ContactsPage.xaml</DependentUpon>
@@ -66,6 +71,7 @@
       <DependentUpon>Instagram.xaml</DependentUpon>
     </Compile>
     <Compile Include="IPAddressManager.cs" />
+    <Compile Include="IPropertyChanged.cs" />
     <Compile Include="ISQLiteDb.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -75,6 +81,8 @@
     <Compile Include="NavigationTest.xaml.cs">
       <DependentUpon>NavigationTest.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Persistance\IContactStore.cs" />
+    <Compile Include="Persistance\SQLiteContactStore.cs" />
     <Compile Include="photo.xaml.cs">
       <DependentUpon>photo.xaml</DependentUpon>
     </Compile>
@@ -85,11 +93,18 @@
     <Compile Include="QoutesPage.xaml.cs">
       <DependentUpon>QoutesPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SQLContactPage.xaml.cs">
+      <DependentUpon>SQLContactPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TestList.xaml.cs">
       <DependentUpon>TestList.xaml</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UserService.cs" />
+    <Compile Include="ViewModels\ContactsViewModel.cs" />
+    <Compile Include="ViewModels\ContactViewModel.cs" />
+    <Compile Include="ViewModels\IPageService.cs" />
+    <Compile Include="ViewModels\PageService.cs" />
     <Compile Include="welcome.xaml.cs">
       <DependentUpon>welcome.xaml</DependentUpon>
     </Compile>
@@ -272,6 +287,19 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SQLContactPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ContactDetail.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.180\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
