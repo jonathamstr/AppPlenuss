@@ -101,6 +101,7 @@
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UserService.cs" />
+    <Compile Include="ViewModels\ContactDetailViewModel.cs" />
     <Compile Include="ViewModels\ContactsViewModel.cs" />
     <Compile Include="ViewModels\ContactViewModel.cs" />
     <Compile Include="ViewModels\IPageService.cs" />

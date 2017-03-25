@@ -8,7 +8,7 @@ using System.Collections.ObjectModel;
 
 namespace HelloWorld.Persistance
 {
-    interface IContactStore
+    public interface IContactStore
     {
 
         Task<IEnumerable<Contact>> getContactsAsync();

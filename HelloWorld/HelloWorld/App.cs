@@ -16,7 +16,7 @@ namespace HelloWorld
             // The root page of your application
             var content = new MainPage();
 
-            MainPage = content;
+            MainPage = new NavigationPage(new ContactsPage());
 
         }
 

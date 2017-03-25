@@ -1,18 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage x:Name="page" xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HelloWorld.ContactsPage"
              Padding="0,20,0,0">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="ToolbarItem_Clicked"/>
+        <ToolbarItem Text="Add" Command="{Binding AddContactoCommand}"/>
     </ContentPage.ToolbarItems>
-    <ListView x:Name="lista" ItemSelected="lista_ItemSelected">
+    <ListView ItemsSource="{Binding Contacts}"
+              SelectedItem="{Binding SelectedContact,Mode=TwoWay}"
+              ItemSelected="OnContactSelected">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding Name}">
+                <TextCell Text="{Binding id}">
                     <TextCell.ContextActions>
-                        <MenuItem Text="Delete" Clicked="MenuItem_Clicked_1" IsDestructive="True"/>
-                    </TextCell.ContextActions>
+                        <MenuItem Text="Borrar" IsDestructive="True" Command="{Binding  Source={x:Reference page}, Path=ViewModel.DeleteContactCommand}" CommandParameter="{Binding .}"/>
+                    </TextCell.ContextActions> 
                 </TextCell>
             </DataTemplate>
         </ListView.ItemTemplate>

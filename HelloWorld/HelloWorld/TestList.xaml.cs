@@ -16,7 +16,7 @@ namespace HelloWorld
             InitializeComponent();
 
 
-            listView.ItemsSource = new List<ContactGroup>
+            /*listView.ItemsSource = new List<ContactGroup>
             {
                 new ContactGroup("M","M")
                 {
@@ -33,7 +33,7 @@ namespace HelloWorld
 
                 
                 
-            };
+            };*/
         }
     }
 }

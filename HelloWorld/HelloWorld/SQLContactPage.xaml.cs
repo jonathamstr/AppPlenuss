@@ -1,4 +1,5 @@
-﻿using HelloWorld.ViewModels;
+﻿using HelloWorld.Persistance;
+using HelloWorld.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,15 +16,17 @@ namespace HelloWorld
     {
         public SQLContactPage()
         {
-            ViewModel = new ContactsViewModel(new PageService());
+            var contactStore = new SQLiteContactStore(DependencyService.Get<ISQLiteDb>());
+            var pageService = new PageService();
+            ViewModel = new ContactsViewModel(contactStore, pageService);
+
             InitializeComponent();
         }
 
-        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        void OnContactSelected(Object sender, SelectedItemChangedEventArgs e)
         {
-            
+            ViewModel.SelectContactCommand.Execute(e.SelectedItem);
         }
-
 
         private ContactsViewModel ViewModel
         {
@@ -33,6 +36,8 @@ namespace HelloWorld
 
         protected override void OnAppearing()
         {
+            ViewModel.LoadDataCommand.Execute(null);
+
             base.OnAppearing();
         }
     }

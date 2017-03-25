@@ -10,48 +10,75 @@ namespace HelloWorld.ViewModels
     public class ContactViewModel : BaseViewModel
     {
 
-        private Contact contacto;
-        public int id {
-            get { return contacto.Id
-                    ; }
-            set {
-                contacto.id = value;
-            } }
-        
-        
-        public string fullName
-        {
-            get { return contacto.fullName; }
-            set { contacto.fullName = value; }
+        private Contact contacto { set; get; }
+
+
+        public ContactViewModel() {
+            contacto = new Contact();
         }
 
-        public string Phone { get { return contacto.Phone; }
-            set { } }
-        public string Email { get; set; }
-        public Boolean blocked { get; set; }
+        public ContactViewModel(Contact contacto)
+        {
+            this.contacto = contacto;
+        }
+
+
+        public int id {
+            get { return contacto.Id; }
+            set {
+                contacto.Id = value;
+                }
+        }
+        
+        
+        public  string FullName
+        {
+            get { return $"{contacto.FirstName} {contacto.LastName}" ; }
+        }
+
+        public string Phone {
+            get { return contacto.Phone; }
+            set {
+                contacto.Phone = value;
+                }
+        }
+
+        public string Email { get
+            { return contacto.Email; }
+            set
+            {
+                contacto.Email = value;
+            }
+        }
+
+        public Boolean blocked {
+            get{ return contacto.IsBlocked; }
+            set
+            {
+                contacto.IsBlocked = value;
+            }
+        }
 
         public string firstName
         {
             get { return firstName; }
             set
             {
-                SetValue(ref _firstName, value);
-
-                SetValue(ref fullName, firstName + " " + lastName, nameof(fullName));
-
+                contacto.FirstName = value;
+                OnPropertyChanged(nameof(contacto));
+                OnPropertyChanged(nameof(FullName));
             }
         }
 
-        private string _firstName;
 
         public string lastName
         {
-            get { return _lastName; }
+            get { return contacto.LastName; }
             set
             {
-                SetValue(ref _lastName, value);
-
-                SetValue(ref fullName, firstName + " " + lastName, nameof(fullName));
+                contacto.LastName = value;
+                OnPropertyChanged(nameof(contacto));
+                OnPropertyChanged(nameof(FullName));
             }
 
         }

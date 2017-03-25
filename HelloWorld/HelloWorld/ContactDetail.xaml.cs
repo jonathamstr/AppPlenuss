@@ -1,4 +1,5 @@
-﻿using HelloWorld.ViewModels;
+﻿using HelloWorld.Persistance;
+using HelloWorld.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +14,12 @@ namespace HelloWorld
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ContactDetail : ContentPage
     {
-        private ContactViewModel _contacto;
-        public ContactDetail(ContactViewModel contacto)
+        
+        public ContactDetail(ContactDetailViewModel viewModel)
         {
-            _contacto = contacto;
             InitializeComponent();
+
+            BindingContext = viewModel;
         }
     }
 }

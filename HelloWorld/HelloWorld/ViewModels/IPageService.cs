@@ -7,10 +7,14 @@ using Xamarin.Forms;
 
 namespace HelloWorld.ViewModels
 {
-    interface IPageService
+    public interface IPageService
     {
         Task PushAsync(Page page);
         Task<bool> DisplayAlertAsync(string title, string message, string ok, string cancel);
+        Task<Page> PopAsync();
+
+
+        Task DisplayAlertAsync(string title, string message, string ok);
 
     }
 }
